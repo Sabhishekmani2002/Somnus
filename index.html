@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Somnus - Restful Sleep Coach & Circadian Optimizer</title>
+  <meta name="description" content="Personalized sleep assessment, circadian rhythm tracking, CBT-I coaching, and ambient wind-down audio studio."/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#0B1120",
+            "surface": "#131314",
+            "primary": "#c1c6db",
+            "secondary": "#c3c0ff",
+            "tertiary": "#bdc2ff",
+            "moonlight-accent": "#e5e2e3",
+            "text-muted": "#909097",
+            "text-variant": "#c6c6cd",
+            "error": "#ffb4ab"
+          },
+          spacing: {
+            "margin-mobile": "16px",
+            "margin-desktop": "64px",
+            "gutter": "16px",
+            "xs": "4px",
+            "sm": "12px",
+            "md": "24px",
+            "lg": "40px",
+            "xl": "64px"
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Material Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-background text-moonlight-accent min-h-screen flex flex-col pb-24 md:pb-0 relative selection:bg-secondary selection:text-background">
+
+  <!-- Fixed Top Header -->
+  <header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-background/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    <div class="flex items-center gap-md">
+      <a href="#" data-nav="dashboard" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-xl">bedtime</span>
+        </div>
+        <span class="font-display text-xl font-bold text-primary tracking-tight">Somnus</span>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#" data-nav="dashboard" class="text-sm text-text-muted hover:text-moonlight-accent transition-colors">Home</a>
+      <a href="#" data-nav="insights" class="text-sm text-text-muted hover:text-moonlight-accent transition-colors">Insights</a>
+      <a href="#" data-nav="coaching" class="text-sm text-text-muted hover:text-moonlight-accent transition-colors">Coaching</a>
+      <a href="#" data-nav="winddown" class="text-sm text-text-muted hover:text-moonlight-accent transition-colors">Wind-Down</a>
+      <a href="#" data-nav="profile" class="text-sm text-text-muted hover:text-moonlight-accent transition-colors">Profile</a>
+    </nav>
+
+    <!-- Quick Actions Header -->
+    <div class="flex items-center gap-sm">
+      <button id="btn-header-log" title="Log Sleep Entry" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-secondary hover:bg-secondary/20 transition-all active:scale-95">
+        <span class="material-symbols-outlined text-xl">add</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main id="app-view-container" class="flex-grow pt-16 min-h-[calc(100vh-4rem)]">
+    <!-- Dynamic SPA Views Render Here -->
+  </main>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-2 h-16 bg-surface/90 backdrop-blur-xl border-t border-white/10 rounded-t-2xl shadow-2xl">
+    <a href="#" data-nav="dashboard" class="flex flex-col items-center justify-center p-2 rounded-xl text-text-muted transition-all">
+      <span class="material-symbols-outlined">home</span>
+      <span class="text-[10px] font-medium mt-0.5">Home</span>
+    </a>
+    <a href="#" data-nav="insights" class="flex flex-col items-center justify-center p-2 rounded-xl text-text-muted transition-all">
+      <span class="material-symbols-outlined">insights</span>
+      <span class="text-[10px] font-medium mt-0.5">Insights</span>
+    </a>
+    <a href="#" data-nav="coaching" class="flex flex-col items-center justify-center p-2 rounded-xl text-text-muted transition-all">
+      <span class="material-symbols-outlined">psychology</span>
+      <span class="text-[10px] font-medium mt-0.5">Coaching</span>
+    </a>
+    <a href="#" data-nav="winddown" class="flex flex-col items-center justify-center p-2 rounded-xl text-text-muted transition-all">
+      <span class="material-symbols-outlined">graphic_eq</span>
+      <span class="text-[10px] font-medium mt-0.5">Studio</span>
+    </a>
+    <a href="#" data-nav="profile" class="flex flex-col items-center justify-center p-2 rounded-xl text-text-muted transition-all">
+      <span class="material-symbols-outlined">person</span>
+      <span class="text-[10px] font-medium mt-0.5">Profile</span>
+    </a>
+  </nav>
+
+  <!-- Application Controller Script -->
+  <script src="app.js"></script>
+</body>
+</html>
